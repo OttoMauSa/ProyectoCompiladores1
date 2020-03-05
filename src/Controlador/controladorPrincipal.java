@@ -47,11 +47,16 @@ public class controladorPrincipal implements ActionListener{
         
         if(vistaPrincipal.btnCalcular == e.getSource()){
             String operacion = vistaPrincipal.txtOperacionAritmetica.getText();
+            //char[] caracteres = operacion.toCharArray();
             Stack pila = new Stack();
+            /*for(char output : caracteres){
+                System.out.println(output);
+            }*/
             for(int i = 0;i<operacion.length();i++){
                 pila.add(operacion.charAt(i));
-                //System.out.println("No "+i+" contenido "+pila.pop());
+                System.out.println("No "+i+" contenido "+pila.pop());
             }
+            //System.out.println(pila.pop());
         }
         if(vistaPrincipal.btnBorrar == e.getSource()){
             
