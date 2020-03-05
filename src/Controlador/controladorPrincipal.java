@@ -9,6 +9,7 @@ import java.awt.event.ActionListener;
 import Vista.*;
 import Principal.*;
 import java.awt.event.ActionEvent;
+import java.util.Stack;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
@@ -45,7 +46,12 @@ public class controladorPrincipal implements ActionListener{
     public void actionPerformed(ActionEvent e){
         
         if(vistaPrincipal.btnCalcular == e.getSource()){
-            
+            String operacion = vistaPrincipal.txtOperacionAritmetica.getText();
+            Stack pila = new Stack();
+            for(int i = 0;i<operacion.length();i++){
+                pila.add(operacion.charAt(i));
+                //System.out.println("No "+i+" contenido "+pila.pop());
+            }
         }
         if(vistaPrincipal.btnBorrar == e.getSource()){
             
