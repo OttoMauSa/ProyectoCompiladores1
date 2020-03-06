@@ -5,11 +5,13 @@
  */
 package Controlador;
 
+import Modelo.Pila;
 import java.awt.event.ActionListener;
 import Vista.*;
 import Principal.*;
 import java.awt.event.ActionEvent;
 import java.util.Stack;
+import javax.swing.JOptionPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
@@ -42,21 +44,45 @@ public class controladorPrincipal implements ActionListener{
         
     }*/
     
+    public boolean validarExpresion(){
+        Pila pila = new Pila();
+        String cadena = vistaPrincipal.txtOperacionAritmetica.getText();
+        for(int i = 0; i<cadena.length();i++){
+            if (cadena.charAt(i)=='(' || cadena.charAt(i)=='{' || cadena.charAt(i)=='[') {
+                pila.Insertar(cadena.charAt(i));
+                
+            } else {
+                if (cadena.charAt(i)==')') {
+                    if(pila.extraer()!='('){
+                        return false;
+                    }
+                } else {
+                    if (cadena.charAt(i)=='}') {
+                        if (pila.extraer()=='{') {
+                            return false;
+                        }
+                    } else {
+                        if (cadena.charAt(i)==']') {
+                            if (pila.extraer()!='[') {
+                                return false;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        return pila.pilaVacia();
+    }
+    
     @Override
     public void actionPerformed(ActionEvent e){
         
         if(vistaPrincipal.btnCalcular == e.getSource()){
-            String operacion = vistaPrincipal.txtOperacionAritmetica.getText();
-            //char[] caracteres = operacion.toCharArray();
-            Stack pila = new Stack();
-            /*for(char output : caracteres){
-                System.out.println(output);
-            }*/
-            for(int i = 0;i<operacion.length();i++){
-                pila.add(operacion.charAt(i));
-                System.out.println("No "+i+" contenido "+pila.pop());
+            if (validarExpresion()) {
+                JOptionPane.showMessageDialog(null, "La formula esta escrita correctamente");
+            } else {
+                JOptionPane.showMessageDialog(null, "Error");
             }
-            //System.out.println(pila.pop());
         }
         if(vistaPrincipal.btnBorrar == e.getSource()){
             
