@@ -5,6 +5,8 @@
  */
 package Vista;
 
+import Modelo.Pila;
+
 /**
  *
  * @author ottom
@@ -177,4 +179,6 @@ public class jdPrincipal extends javax.swing.JDialog {
     public javax.swing.JTextField txtOperacionAritmetica;
     public javax.swing.JTextField txtResultado;
     // End of variables declaration//GEN-END:variables
+    
+
 }
