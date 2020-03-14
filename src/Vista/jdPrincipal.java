@@ -41,6 +41,7 @@ public class jdPrincipal extends javax.swing.JDialog {
         jtDatos = new javax.swing.JTable();
         btnSalir = new javax.swing.JButton();
         btnBorrar = new javax.swing.JButton();
+        txtComent = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -54,13 +55,29 @@ public class jdPrincipal extends javax.swing.JDialog {
 
         jtDatos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {},
-                {},
-                {},
-                {}
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null}
             },
             new String [] {
-
+                "Num", "Descripcion", "Token"
             }
         ));
         jScrollPane1.setViewportView(jtDatos);
@@ -98,7 +115,11 @@ public class jdPrincipal extends javax.swing.JDialog {
                         .addGap(160, 160, 160))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(btnSalir)
-                        .addGap(202, 202, 202))))
+                        .addGap(204, 204, 204))))
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(txtComent)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -118,8 +139,10 @@ public class jdPrincipal extends javax.swing.JDialog {
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(txtComent, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 17, Short.MAX_VALUE)
                 .addComponent(btnSalir)
-                .addContainerGap(17, Short.MAX_VALUE))
+                .addGap(33, 33, 33))
         );
 
         pack();
@@ -176,6 +199,7 @@ public class jdPrincipal extends javax.swing.JDialog {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JScrollPane jScrollPane1;
     public javax.swing.JTable jtDatos;
+    public javax.swing.JTextField txtComent;
     public javax.swing.JTextField txtOperacionAritmetica;
     public javax.swing.JTextField txtResultado;
     // End of variables declaration//GEN-END:variables
