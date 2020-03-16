@@ -33,7 +33,8 @@ public class controladorPrincipal implements ActionListener{
     
     public controladorPrincipal(jdPrincipal principal){
         vistaPrincipal = principal;
-        vistaPrincipal.btnCalcular.addActionListener(this);
+        vistaPrincipal.btnLexico.addActionListener(this);
+        vistaPrincipal.btnSintactico.addActionListener(this);
         vistaPrincipal.btnBorrar.addActionListener(this);
         vistaPrincipal.btnSalir.addActionListener(this);    
     }
@@ -66,7 +67,7 @@ public class controladorPrincipal implements ActionListener{
                     }
                 } else {
                     if (cadena.charAt(i)=='}') {
-                        if (pila.extraer()=='{') {
+                        if (pila.extraer()!='{') {
                             return false;
                         }
                     } else {
@@ -85,7 +86,7 @@ public class controladorPrincipal implements ActionListener{
     @Override
     public void actionPerformed(ActionEvent e){
         
-        if(vistaPrincipal.btnCalcular == e.getSource()){
+        if(vistaPrincipal.btnLexico == e.getSource()){
             int token, vAd, aux[];
             int indexAnterior = 0;
             C = this.vistaPrincipal.txtOperacionAritmetica.getText().toCharArray();
@@ -93,11 +94,6 @@ public class controladorPrincipal implements ActionListener{
             aux = buscar();
             token = aux[0];
             vAd = aux[1];
-            if (validarExpresion()) {
-                JOptionPane.showMessageDialog(null, "La formula esta escrita correctamente");
-            } else {
-                JOptionPane.showMessageDialog(null, "Error");
-            }
             
             while (token != -1 && token != 0) {
             try {
@@ -116,6 +112,13 @@ public class controladorPrincipal implements ActionListener{
                 this.vistaPrincipal.txtComent.setText("Terminado con exito...");
             }
             index = 0;
+        }
+        if(vistaPrincipal.btnSintactico == e.getSource()){
+            if (validarExpresion()) {
+                JOptionPane.showMessageDialog(null, "La formula esta escrita correctamente");
+            } else {
+                JOptionPane.showMessageDialog(null, "Error");
+            }
         }
         if(vistaPrincipal.btnBorrar == e.getSource()){
             for (int i = 0; i < filaTodo; i++) {
