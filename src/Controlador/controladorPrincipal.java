@@ -133,6 +133,8 @@ public class controladorPrincipal implements ActionListener{
             this.numID = 0;
             this.filaTodo = 0;
             vistaPrincipal.txtOperacionAritmetica.setText("");
+            vistaPrincipal.txtResultado.setText("");
+            
         }
         if(vistaPrincipal.btnSalir == e.getSource()){
             System.exit(0);
