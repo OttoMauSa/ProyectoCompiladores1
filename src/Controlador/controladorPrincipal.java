@@ -39,19 +39,6 @@ public class controladorPrincipal implements ActionListener{
         vistaPrincipal.btnSalir.addActionListener(this);    
     }
     
-    /*public void llenarTabla(JTable tablaD){
-        DefaultTableModel modeloT = new DefaultTableModel();
-        tablaD.setModel(modeloT);
-        
-        modeloT.addColumn("TOKEN");
-        modeloT.addColumn("ATRIBUTO");
-        modeloT.addColumn("OBSERVACION");
-        
-        Object[] columna = new Object[3];
-        
-       
-        
-    }*/
     
     public boolean validarExpresion(){
         Pila pila = new Pila();
@@ -536,5 +523,7 @@ public class controladorPrincipal implements ActionListener{
         }
         return true;
     }
+    
+    
     
 }
